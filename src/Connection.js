@@ -70,7 +70,7 @@ peer.on('connection', function(conn) {
     document.querySelector("#Config").className += "hide";
     document.querySelector("#Player").className = "";
     conn.on('data', function(data) {
-        if(data.action && data.data && Actions[data.action]) {
+        if(data.action && Actions[data.action]) {
             Actions[data.action](data.data);
         }
     });
