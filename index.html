@@ -18,18 +18,65 @@
               height: 100%;
               position: fixed;
           }
+          button {
+              width: 120px;
+              height: 40px;
+          }
+          #Search {
+              margin-bottom: 30px;
+          }
+          input {
+              border: 1px solid #000;
+              height: 40px;
+          }
+          ul {
+              width: 400px;
+              display: table;
+              list-style: none;
+              margin: 0;
+              padding: 0;
+          }
+          ul li {
+              width: 400px;
+              margin: 5px 0;
+              padding: 5px 0;
+              float: left;
+              border-bottom: 1px solid #DDD;
+          }
+          ul li img {
+              float: left;
+              width: 60px;
+              margin-right: 10px;
+          }
+          ul li h3 {
+              width: 230px;
+              font-size: 18px;
+              float: left;
+              margin: 0;
+              padding: 0;
+          }
+          ul li:nth-child(even) {
+              background: #EEE;
+          }
       </style>
   </head>
   <body>
-      <div id="Config">
+      <div id="Config" class="hide">
         <img id="QRCode" src="">
       </div>
       <div id="Player" class="hide"></div>
-      <div id="Controls" class="hide">
-          <button onclick="conn.send({action: 'PLAY'});" width="200">PLAY</button>
-          <button onclick="conn.send({action: 'PAUSE'});" width="200">PAUSE</button>
-          <button onclick="conn.send({action: 'OPENVIDEO', data: 'pXRviuL6vMY'});" width="200">TWENTYONE</button>
-          <button onclick="conn.send({action: 'OPENVIDEO', data: '8S0FDjFBj8o'});" width="200">TED</button>
+      <div id="Controls" class="xhide">
+          <div id="MediaControls">
+              <button onclick="conn.send({action: 'PLAY'});">PLAY</button>
+              <button onclick="conn.send({action: 'PAUSE'});">PAUSE</button>
+          </div>
+          <div id="Search">
+              <input type="search" id="SearchInput" placeholder="Search"/>
+              <button onclick="search()">Search</button>
+          </div>
+          <ul id="Videos">
+
+          </ul>
       </div>
   </body>
 </html>
