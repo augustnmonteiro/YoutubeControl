@@ -1,9 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="dist/main.js"></script>     
+    <script src="http://cdn.peerjs.com/0.3/peer.js"></script>
+    <script src="dist/CONSTANTS/PEERJS.js"></script>
+    <script src="dist/Actions.js"></script>
+    <script src="dist/Connection.js"></script>
+    <script src="dist/main.js"></script>
+      <style>
+          .hide {display: none;}
+      </style>
   </head>
   <body>
-     
+      <div id="Config">
+        <img id="QRCode" src="">
+      </div>
+      <div id="Player" class="hide">
+          <iframe id="YouTube" width="500" height="300"></iframe>
+      </div>
+      <div id="Controls" class="hide">
+          <button onclick="conn.send({action: 'OPENVIDEO', data: 'pXRviuL6vMY'});" width="200">TWENTYONE</button>
+          <button onclick="conn.send({action: 'OPENVIDEO', data: '8S0FDjFBj8o'});" width="200">TED</button>
+      </div>
   </body>
 </html>

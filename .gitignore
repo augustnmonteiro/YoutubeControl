@@ -1,6 +1,9 @@
 # DIST
 dist/*
 
+# IDEA
+.idea
+
 # NODE
 node_modules
 
