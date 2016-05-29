@@ -5,19 +5,29 @@
     <script src="dist/CONSTANTS/PEERJS.js"></script>
     <script src="dist/Actions.js"></script>
     <script src="dist/Connection.js"></script>
+    <script src="dist/Youtube.js"></script>
     <script src="dist/main.js"></script>
       <style>
+          body {
+              padding: 0;
+              margin: 0;
+          }
           .hide {display: none;}
+          #Player {
+              width: 100%;
+              height: 100%;
+              position: fixed;
+          }
       </style>
   </head>
   <body>
       <div id="Config">
         <img id="QRCode" src="">
       </div>
-      <div id="Player" class="hide">
-          <iframe id="YouTube" width="500" height="300"></iframe>
-      </div>
+      <div id="Player" class="hide"></div>
       <div id="Controls" class="hide">
+          <button onclick="conn.send({action: 'PLAY'});" width="200">PLAY</button>
+          <button onclick="conn.send({action: 'PAUSE'});" width="200">PAUSE</button>
           <button onclick="conn.send({action: 'OPENVIDEO', data: 'pXRviuL6vMY'});" width="200">TWENTYONE</button>
           <button onclick="conn.send({action: 'OPENVIDEO', data: '8S0FDjFBj8o'});" width="200">TED</button>
       </div>

@@ -1,6 +1,15 @@
 var Actions = {
     "OPENVIDEO": function (video) {
         console.log("VIDEO: ", video);
-        document.querySelector("#YouTube").src = "https://www.youtube.com/embed/" + video;
+        loadVideo(video);
+    },
+    "PLAY" : function () {
+        player.playVideo();
+    },
+    "PAUSE": function () {
+        player.pauseVideo();
+    },
+    "VOLUME": function (volume) {
+
     }
 };

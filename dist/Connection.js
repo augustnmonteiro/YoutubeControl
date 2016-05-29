@@ -1,10 +1,12 @@
-var localId = null
-    , isClient = false
-    , remoteId = null;
+"use strict";
+
+var localId = null,
+    isClient = false,
+    remoteId = null;
 
 {
-    let id = window.location.search.substr(1)
-        , client = id.substr(id.length - 2);
+    var id = window.location.search.substr(1),
+        client = id.substr(id.length - 2);
     if (id && client === "cc") {
         isClient = true;
         localId = id;
@@ -20,11 +22,11 @@ window.onload = function () {
 };
 
 var peer = new Peer(localId, {
-  key: PEERJS_KEY,
-  debug: 0
+    key: PEERJS_KEY,
+    debug: 0
 });
 
-peer.on('open', function(id) {
+peer.on('open', function (id) {
     console.log('LocalID: ' + id);
     if (remoteId === null) {
         remoteId = id + "cc";
@@ -41,11 +43,11 @@ function openConnection() {
     conn.on('open', function () {
         console.log("OPENED");
 
-        conn.on('error', function(data) {
+        conn.on('error', function (data) {
             console.log('Error', data);
         });
 
-        conn.on('close', function(data) {
+        conn.on('close', function (data) {
             console.log('Close', data);
         });
     });
@@ -53,24 +55,24 @@ function openConnection() {
     window.conn = conn;
 }
 
-peer.on('error', function(err) {
+peer.on('error', function (err) {
     console.log("ERROR", err);
 });
 
-peer.on('disconnected', function() {
+peer.on('disconnected', function () {
     console.log("DISCONNECTED");
 });
 
-peer.on('close', function() {
+peer.on('close', function () {
     console.log("CLOSE");
 });
 
-peer.on('connection', function(conn) {
+peer.on('connection', function (conn) {
     console.log("CONNECTED");
     document.querySelector("#Config").className += "hide";
     document.querySelector("#Player").className = "";
-    conn.on('data', function(data) {
-        if(data.action && Actions[data.action]) {
+    conn.on('data', function (data) {
+        if (data.action && Actions[data.action]) {
             Actions[data.action](data.data);
         }
     });
