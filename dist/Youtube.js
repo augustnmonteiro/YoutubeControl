@@ -1,4 +1,52 @@
-'use strict';
+"use strict";
+
+var YoutubeAPI = {
+    baseUrl: "https://www.googleapis.com/youtube/v3/",
+    baseParam: {
+        key: "AIzaSyBy4Hl33iqHbJe6nFTDh-f6cASBGjy4vL4",
+        maxResults: 20,
+        order: "viewCount",
+        part: "snippet",
+        pageToken: ""
+    },
+    response: {},
+    lastquery: "",
+    query: function query(params) {
+        var query = "?";
+        for (var item in params) {
+            query += item + "=" + params[item] + "&";
+        }
+        for (var _item in this.baseParam) {
+            query += _item + "=" + this.baseParam[_item] + "&";
+        }
+        return query.substr(0, query.length - 1);
+    },
+    request: function request(url, params, callback) {
+        url = this.baseUrl + url + this.query(params);
+        var query = url;
+        if (url.split("?")[1]) {
+            query += "&";
+        } else {
+            query += "?";
+        }
+        query += "callback=jsonp";
+
+        var script = window.document.createElement("script");
+        window.jsonp = function (data) {
+            callback(data);
+            delete window.jsonp;
+            window.document.body.removeChild(script);
+        };
+        script.src = query;
+        window.document.body.appendChild(script);
+    },
+    search: function search(q, callback) {
+        this.request("search", { q: q }, function (data) {
+            callback(data);
+        });
+        this.lastquery = q;
+    }
+};
 
 var tag = document.createElement('script'),
     firstScriptTag,
@@ -11,7 +59,9 @@ function loadIframeApi() {
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 }
 
-loadIframeApi();
+if (!isClient) {
+    loadIframeApi();
+}
 
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('Player', {
