@@ -1,0 +1,8 @@
+# DIST
+dist/*
+
+# NODE
+node_modules
+
+# LOG
+*.log
