@@ -11,5 +11,8 @@ var Actions = {
     "PAUSE": function PAUSE() {
         player.pauseVideo();
     },
-    "VOLUME": function VOLUME(volume) {}
+    "VOLUME": function VOLUME(volume) {
+        console.log(volume);
+        player.setVolume(volume);
+    }
 };

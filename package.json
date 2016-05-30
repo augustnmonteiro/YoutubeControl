@@ -10,7 +10,7 @@
     "build-babel": "./node_modules/.bin/babel src -d dist",
     "dev-babel": "./node_modules/.bin/babel --watch src -d dist",
     "build": "npm run build-babel",
-    "update-page": "git checkout gh-pages;git pull origin master;npm run build;git add .;git commit -m 'Updating';git push origin gh-pages"
+    "update-page": "git checkout gh-pages;git pull origin master;npm run build;git add .;git commit -m 'Updating';git push origin gh-pages;git checkout master"
   },
   "author": "Augusto Monteiro",
   "license": "MIT",
