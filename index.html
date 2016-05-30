@@ -61,14 +61,15 @@
       </style>
   </head>
   <body>
-      <div id="Config" class="hide">
+      <div id="Config">
         <img id="QRCode" src="">
       </div>
       <div id="Player" class="hide"></div>
-      <div id="Controls" class="xhide">
+      <div id="Controls" class="hide">
           <div id="MediaControls">
               <button onclick="conn.send({action: 'PLAY'});">PLAY</button>
               <button onclick="conn.send({action: 'PAUSE'});">PAUSE</button>
+              <input id="Volume" oninput="conn.send({action: 'VOLUME', data: this.value});" type="range" min="0" max="100"/>
           </div>
           <div id="Search">
               <input type="search" id="SearchInput" placeholder="Search"/>

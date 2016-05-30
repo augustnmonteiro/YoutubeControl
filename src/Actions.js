@@ -10,6 +10,7 @@ var Actions = {
         player.pauseVideo();
     },
     "VOLUME": function (volume) {
-
+        console.log(volume);
+        player.setVolume(volume);
     }
 };
