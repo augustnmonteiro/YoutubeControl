@@ -4,7 +4,7 @@ var YoutubeAPI = {
     baseUrl: "https://www.googleapis.com/youtube/v3/",
     baseParam: {
         key: "AIzaSyBy4Hl33iqHbJe6nFTDh-f6cASBGjy4vL4",
-        maxResults: 20,
+        maxResults: 50,
         order: "viewCount",
         part: "snippet",
         pageToken: ""
