@@ -13,4 +13,5 @@ function search(){
             ul.appendChild(li);
         });
     });
+    document.querySelector("#SearchInput").blur();
 }
