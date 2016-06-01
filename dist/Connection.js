@@ -16,7 +16,7 @@ var localId = null,
 
 window.onload = function () {
     if (isClient) {
-        document.querySelector("#Config").className += "hide";
+        document.querySelector("#Config").className += " hide";
         document.querySelector("#Controls").className = "";
     }
 };
@@ -69,7 +69,7 @@ peer.on('close', function () {
 
 peer.on('connection', function (conn) {
     console.log("CONNECTED");
-    document.querySelector("#Config").className += "hide";
+    document.querySelector("#Config").className += " hide";
     document.querySelector("#Player").className = "";
     conn.on('data', function (data) {
         if (data.action && Actions[data.action]) {
