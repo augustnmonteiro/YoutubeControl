@@ -1,0 +1,10 @@
+#Config {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(#E2E2E2, #5D5D5D);
+}
+
+#QRCode {
+    margin-top: calc(50vh - 75px);
+    margin-left: calc(50vw - 75px)
+}

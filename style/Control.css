@@ -1,0 +1,84 @@
+#Control {
+    width: 100vw;
+}
+#MediaControls {
+    width: 100vw;
+    display: table;
+    position: fixed;
+    background: #FFF;
+    box-shadow: 0 0 30px #333;
+    padding: 0 0 20px 0;
+}
+#MediaControls button {
+    width: 50vw;
+    height: 100px;
+    float: left;
+    background: #333;
+    border: none;
+    color: #FFF;
+    font-size: 40px;
+    border-right: 1px solid #000;
+    outline: none;
+}
+#MediaControls button:focus {
+    outline: none;
+}
+#MediaControls button:last-child {
+    border: none;
+}
+#MediaControls input {
+    width: 90%;
+    margin: 0 5%;
+    height: 90px;
+}
+button {
+    width: 120px;
+    height: 40px;
+}
+#Search {
+    margin-bottom: 30px;
+}
+#SearchInput {
+    width: 90%;
+    margin: 0 5%;
+    font-size: 30px;
+    height: 60px;
+    box-sizing: border-box;
+    padding: 5px;
+}
+input {
+    border: 1px solid #000;
+    height: 40px;
+}
+ul {
+    width: 100%;
+    display: table;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+ul li {
+    width: 100%;
+    margin: 5px 0;
+    padding: 5px 0;
+    float: left;
+    border-bottom: 1px solid #DDD;
+}
+ul li img {
+    float: left;
+    width: 30%;
+    margin-right: 10px;
+}
+ul li h3 {
+    width: calc(70% - 10px);
+    font-size: 30px;
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+ul li:nth-child(even) {
+    background: #EEE;
+}
+#Videos {
+    padding-top: 330px;
+}
