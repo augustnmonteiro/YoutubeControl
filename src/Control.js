@@ -1,5 +1,7 @@
 var Control = {
 
+    content: document.getElementById("Content"),
+
     html: `<div id="MediaControls">
     <button onclick="conn.send({action: 'play'});">PLAY</button>
     <button onclick="conn.send({action: 'pause'});">PAUSE</button>
@@ -19,25 +21,28 @@ var Control = {
     },
 
     search () {
-        var value = document.querySelector("#SearchInput").value;
+        let value = document.querySelector("#SearchInput").value;
         YoutubeAPI.search(value, this.renderVideosList);
         document.querySelector("#SearchInput").blur();
     },
 
     renderVideosList(list) {
-        var ul = document.querySelector("#Videos");
-        ul.innerHTML = "";
+        let ul = document.querySelector("#Videos")
+            , fragment = document.createDocumentFragment();
+
         list.items.forEach((item) => {
             let li = document.createElement("li");
             li.innerHTML = `<img class='thumb' src='${item.snippet.thumbnails.default.url}'>
                 <h3>${item.snippet.title}</h3>`;
             li.onclick = () => conn.send({action: 'open', data: item.id.videoId});
-            ul.appendChild(li);
+            fragment.appendChild(li);
         });
+        ul.innerHTML = "";
+        ul.appendChild(fragment);
     },
 
     render () {
-        document.getElementById("Content").innerHTML = this.html;
+        this.content.innerHTML = this.html;
     }
 
 };
