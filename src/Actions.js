@@ -1,16 +1,27 @@
 var Actions = {
-    "OPENVIDEO": function (video) {
-        console.log("VIDEO: ", video);
-        loadVideo(video);
+
+    open (videoId) {
+        loadVideo(videoId);
     },
-    "PLAY" : function () {
+
+    play () {
         player.playVideo();
     },
-    "PAUSE": function () {
+
+    pause () {
         player.pauseVideo();
     },
-    "VOLUME": function (volume) {
-        console.log(volume);
-        player.setVolume(volume);
+
+    volume (value) {
+        player.setVolume(value);
+    },
+
+    next () {
+
+    },
+
+    previous () {
+
     }
+
 };
