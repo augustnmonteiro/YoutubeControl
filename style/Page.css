@@ -5,6 +5,8 @@
 }
 
 #QRCode {
+    width: 150px;
+    height: 150px;
     margin-top: calc(50vh - 75px);
     margin-left: calc(50vw - 75px)
 }

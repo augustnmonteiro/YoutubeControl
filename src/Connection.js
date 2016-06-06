@@ -11,7 +11,10 @@ peer.on('open', function(id) {
     console.log('LocalID: ' + id);
     if (remoteId === null) {
         remoteId = id + "cc";
-        document.querySelector("#QRCode").src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + location.href + "?" + remoteId;
+        qr.image({
+            image: document.querySelector("#QRCode"),
+            value: location.href + "?" + remoteId
+        });
     }
     openConnection();
 });

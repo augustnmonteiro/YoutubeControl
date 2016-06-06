@@ -1,14 +1,13 @@
 var YoutubeAPI = {
     baseUrl: "https://www.googleapis.com/youtube/v3/",
     baseParam: {
-        key: "AIzaSyBy4Hl33iqHbJe6nFTDh-f6cASBGjy4vL4",
+        key: YOUTUBE_KEY,
         maxResults: 50,
         order: "viewCount",
         part: "snippet",
         pageToken: "",
         callback: "jsonp"
     },
-    response: {},
     query (params) {
         let query = "?"
             , params = params.concat(this.baseParam);
@@ -30,8 +29,6 @@ var YoutubeAPI = {
         this.request("search", {q: q}, (data) => callback(data));
     }
 };
-
-
 
 var tag = document.createElement('script'),
     firstScriptTag,

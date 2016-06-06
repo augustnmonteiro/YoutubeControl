@@ -11,12 +11,12 @@
 }
 #MediaControls button {
     width: 50vw;
-    height: 100px;
+    height: 50px;
     float: left;
     background: #333;
     border: none;
     color: #FFF;
-    font-size: 40px;
+    font-size: 20px;
     border-right: 1px solid #000;
     outline: none;
 }
@@ -28,8 +28,8 @@
 }
 #MediaControls input {
     width: 90%;
-    margin: 0 5%;
-    height: 90px;
+    margin: 5px 5% 0 5%;
+    height: 40px;
 }
 button {
     width: 120px;
@@ -41,15 +41,12 @@ button {
 #SearchInput {
     width: 90%;
     margin: 0 5%;
-    font-size: 30px;
-    height: 60px;
+    font-size: 20px;
+    height: 20px;
     box-sizing: border-box;
     padding: 5px;
 }
-input {
-    border: 1px solid #000;
-    height: 40px;
-}
+
 ul {
     width: 100%;
     display: table;
