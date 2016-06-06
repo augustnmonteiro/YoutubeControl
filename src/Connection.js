@@ -1,25 +1,35 @@
-var localId = null
-    , isClient = false
-    , remoteId = null;
+var isControl = window.location.search.substr(1);
+var myId = isControl || null;
 
-var peer = new Peer(localId, {
+console.log(myId);
+
+var peer = new Peer(myId, {
   key: PEERJS_KEY,
   debug: 0
 });
 
+
 peer.on('open', function(id) {
-    console.log('LocalID: ' + id);
-    if (remoteId === null) {
-        remoteId = id + "cc";
+    myId = id;
+    console.log('MyID: ' + id);
+    if (!isControl) {
         qr.image({
             image: document.querySelector("#QRCode"),
-            value: location.href + "?" + remoteId
+            value: location.href + "?" + id + "cc",
+            size: 10
         });
     }
     openConnection();
 });
 
 function openConnection() {
+    let remoteId = null;
+    if (isControl) {
+        remoteId = myId.substr(0, myId.length - 2);
+    } else {
+        remoteId = myId + "cc";
+    }
+    console.log("REMOTEID", remoteId);
     var conn = peer.connect(remoteId, {
         reliable: true
     });

@@ -68,7 +68,7 @@ ul li img {
 }
 ul li h3 {
     width: calc(70% - 10px);
-    font-size: 30px;
+    font-size: 18px;
     float: left;
     margin: 0;
     padding: 0;
@@ -77,5 +77,5 @@ ul li:nth-child(even) {
     background: #EEE;
 }
 #Videos {
-    padding-top: 330px;
+    padding-top: 170px;
 }

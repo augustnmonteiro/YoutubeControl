@@ -9,10 +9,10 @@ var YoutubeAPI = {
         callback: "jsonp"
     },
     query (params) {
-        let query = "?"
-            , params = params.concat(this.baseParam);
+        let query = "?";
+        params = Object.assign(params, this.baseParam);
 
-        Object.keys(params).forEach((param) => query += "${param}=${params[param]}");
+        Object.keys(params).forEach((param) => query += `${param}=${params[param]}&`);
         return query.substr(0, (query.length - 1));
     },
     request (url, params, callback) {
@@ -41,7 +41,7 @@ function loadIframeApi(){
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 }
 
-if (!isClient) {
+if (!isControl) {
     loadIframeApi();
 }
 

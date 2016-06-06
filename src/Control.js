@@ -4,7 +4,7 @@ var Control = {
     <button onclick="conn.send({action: 'PLAY'});">PLAY</button>
     <button onclick="conn.send({action: 'PAUSE'});">PAUSE</button>
     <input id="Volume" oninput="conn.send({action: 'VOLUME', data: this.value});" type="range" min="0" max="100"/>
-    <input type="text" id="SearchInput" placeholder="Search" onkeydown="if (event.keyCode === 13) {search();}"/>
+    <input type="text" id="SearchInput" placeholder="Search" onkeydown="if (event.keyCode === 13) {Control.search();}"/>
     </div>
     <ul id="Videos">
 
