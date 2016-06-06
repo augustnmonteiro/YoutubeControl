@@ -39,6 +39,9 @@ function openConnection() {
 
 peer.on('connection', function(conn) {
     console.log("CONNECTED");
+    if (!isControl) {
+        Player.showPlayer();
+    }
     conn.on('data', function(data) {
         if(data.action && Actions[data.action]) {
             Actions[data.action](data.data);

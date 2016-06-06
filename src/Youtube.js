@@ -41,10 +41,6 @@ function loadIframeApi(){
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 }
 
-if (!isControl) {
-    loadIframeApi();
-}
-
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('Player', {
         height: '200',
