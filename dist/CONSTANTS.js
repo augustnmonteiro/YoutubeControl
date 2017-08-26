@@ -1,4 +1,4 @@
 "use strict";
 
 var PEERJS_KEY = "ucluc013wtjfw29";
-var YOUTUBE_KEY = "AIzaSyBy4Hl33iqHbJe6nFTDh-f6cASBGjy4vL4";
+var YOUTUBE_KEY = "AIzaSyCV8Aa5ZVrIxWN4iebpA02gII9-bSNLv3g";
