@@ -1,0 +1,33 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Youtube Control</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+    <script>
+      window.app = {};
+      var config = {
+        apiKey: "AIzaSyBtlAYU3TFEfIjXQWZN_LpQ8S9jJJ-m8oA",
+        authDomain: "youtubecontrol.firebaseapp.com",
+        databaseURL: "https://youtubecontrol.firebaseio.com",
+        storageBucket: "youtubecontrol.appspot.com",
+        messagingSenderId: "910911059901"
+      };
+      firebase.initializeApp(config);
+      app.db = firebase.database;
+    </script>
+    <script src="js/qr.js"></script>
+    <script src="js/youtube.js"></script>
+    <script src="js/control.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/actions.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body>
+<div id="Content"></div>
+</body>
+</html>
