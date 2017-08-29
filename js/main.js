@@ -36,7 +36,7 @@ function initDesktop() {
   });
   qr.image({
     image: document.querySelector("#QRCode"),
-    value: location.href + "?i" + app.id,
+    value: location.href + "?i=" + app.id,
     size: 10
   });
   app.ref.on('child_changed', function (f) {
