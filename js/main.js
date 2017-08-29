@@ -72,6 +72,9 @@ function initRemote() {
 }
 
 function load() {
+  if (window.location.href.indexOf("?ref=producthunt") !== -1) {
+    window.location.href = "/YoutubeControl";
+  }
   app.query = parseQuery(window.location.search);
   if (app.query.i) {
     app.id = app.query.i;
