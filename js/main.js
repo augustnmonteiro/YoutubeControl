@@ -12,8 +12,9 @@ function parseQuery(qstr) {
 }
 
 function hideAll() {
-  var hide = document.querySelectorAll(".hide");
+  var hide = document.querySelectorAll(".hideMe");
   Object.keys(hide).forEach(function(i) {
+    console.log(hide, i);
     hide[i].classList.add("hide");
   });
 }
@@ -75,6 +76,12 @@ function initDesktop() {
 function initRemote() {
   app.ref = app.db().ref('i/' + app.id);
   app.ref.update({connected: true});
+}
+
+function startRemoteButton() {
+  app.id = document.querySelector("#appId").value;
+  app.control.render();
+  initRemote();
 }
 
 function load() {

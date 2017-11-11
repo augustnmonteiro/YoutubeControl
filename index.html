@@ -29,7 +29,7 @@
 </head>
 <body>
 <div id="Content">
-    <div id="Config" class="hide">
+    <div id="Config" class="hide hideMe">
         <div>
             <h1>Read the QR Code using your phone</h1>
             <img id="QRCode" src=""/>
@@ -37,13 +37,13 @@
             <span>ALKJ-LKJF</span>
             <h1>If you have the code type:</h1>
             <div id="form">
-                <input type="text"/>
-                <button>OK</button>
+                <input id="appId" type="text"/>
+                <button onclick="startRemoteButton()">OK</button>
             </div>
         </div>
     </div>
-    <div id="Player" class="hide"></div>
-    <div id="Control" class="hide">
+    <div id="Player" class="hide hideMe"></div>
+    <div id="Control" class="hide hideMe">
         <div id="MediaControls">
             <button onclick="app.ref.update({state: 'play'});">PLAY</button>
             <button onclick="app.ref.update({state: 'pause'});">PAUSE</button>

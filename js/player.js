@@ -5,6 +5,7 @@ app.player = {
   showPlayer: function showPlayer() {
     if (!this.youtubeFrameLoaded) {
       hideAll();
+      console.log("Show");
       document.getElementById("Player").classList.remove("hide");
       loadIframeApi();
       this.youtubeFrameLoaded = true;
