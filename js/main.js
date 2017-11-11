@@ -34,6 +34,7 @@ function initDesktop() {
     localStorage.setItem("id", uuid());
   }
   app.id = localStorage.getItem("id");
+  document.querySelector("#code").innerHTML = app.id;
   app.ref = app.db().ref('i/' + app.id);
   app.ref.set({
     video: "",
@@ -47,6 +48,9 @@ function initDesktop() {
     size: 10
   });
   app.ref.on('child_changed', function (f) {
+    if (app.remote) {
+      return;
+    }
     switch (f.key) {
       case "connected":
         if (f.val() === true) {
@@ -80,6 +84,7 @@ function initRemote() {
 
 function startRemoteButton() {
   app.id = document.querySelector("#appId").value;
+  app.remote = true;
   app.control.render();
   initRemote();
 }
