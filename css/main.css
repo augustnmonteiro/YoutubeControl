@@ -180,14 +180,69 @@ ul li:nth-child(even) {
 #Config {
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(#E2E2E2, #5D5D5D);
+    display: table;
+    background: #FF6700;
+    color: #F9F4EF;
+    font-family: monospace;
+    padding: 10px 5px;
+    box-sizing: border-box;
+}
+
+#Config > div {
+    text-align: center;
+    display: table;
+    margin: 0 auto;
+}
+
+#Config span {
+    background: rgba(0,0,0,0.2);
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#Config input {
+    background: rgba(0,0,0,0.2);
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    border: 1px rgba(0,0,0,0.1) solid;
+    width: 140px;
+    height: 35px;
+    color: #FFF;
+}
+
+#Config #form {
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    color: #FF6700;
+    display: table;
+    margin: 0 auto;
+}
+
+#Config #form input {
+    float: left;
+}
+
+#Config #form button {
+    width: 70px;
+    height: 57px;
+    background: #e05b00;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    color: #FFF;
+    float: left;
+    cursor: pointer;
 }
 
 #QRCode {
-    width: 150px;
-    height: 150px;
-    margin-top: calc(50vh - 75px);
-    margin-left: calc(50vw - 75px)
+    width: 200px;
+    height: 200px;
+    border: 20px rgba(0,0,0,0.2) solid;
 }
 #Player {
     width: 100%;

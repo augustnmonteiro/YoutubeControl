@@ -1,16 +1,18 @@
 app.player = {
 
-    youtubeFrameLoaded: false,
+  youtubeFrameLoaded: false,
 
-    showPlayer: function showPlayer() {
-        if (!this.youtubeFrameLoaded) {
-            document.getElementById("Content").innerHTML = "<div id=\"Player\"></div>";
-            loadIframeApi();
-            this.youtubeFrameLoaded = true;
-        }
-    },
-    render: function render() {
-        document.getElementById("Content").innerHTML = this.html;
-        document.getElementById("Content").innerHTML = "<div id=\"Config\">\n            <img id=\"QRCode\" src=\"\">\n       </div>";
+  showPlayer: function showPlayer() {
+    if (!this.youtubeFrameLoaded) {
+      hideAll();
+      document.getElementById("Player").classList.remove("hide");
+      loadIframeApi();
+      this.youtubeFrameLoaded = true;
     }
+  },
+  render: function render() {
+    hideAll();
+    document.getElementById("Config").classList.remove("hide");
+  }
+
 };

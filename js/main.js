@@ -11,6 +11,13 @@ function parseQuery(qstr) {
   return query;
 }
 
+function hideAll() {
+  var hide = document.querySelectorAll(".hide");
+  Object.keys(hide).forEach(function(i) {
+    hide[i].classList.add("hide");
+  });
+}
+
 function uuid() {
   function s4() {
     return Math.floor((1 + Math.random()) * 0x10000)
@@ -18,8 +25,7 @@ function uuid() {
       .substring(1);
   }
 
-  return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
-    s4() + '-' + s4() + s4() + s4() + '-' + (+new Date()).toString(16);
+  return (s4() + "-" + s4()).toUpperCase();
 }
 
 function initDesktop() {
