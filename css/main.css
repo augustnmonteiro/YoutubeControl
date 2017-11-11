@@ -154,10 +154,9 @@ ul {
 }
 ul li {
     width: 100%;
-    margin: 5px 0;
     padding: 5px 0;
     float: left;
-    border-bottom: 1px solid #DDD;
+    background: rgba(0,0,0,0.1);
 }
 ul li img {
     float: left;
@@ -165,17 +164,20 @@ ul li img {
     margin-right: 10px;
 }
 ul li h3 {
-    width: calc(70% - 10px);
-    font-size: 18px;
     float: left;
     margin: 0;
     padding: 0;
+    width: calc(70% - 20px);
+    font-size: 16px;
+    color: #F9ECDC;
+    font-family: monospace;
 }
 ul li:nth-child(even) {
-    background: #EEE;
+    background: rgba(0,0,0,0.2);
 }
 #Videos {
     padding-top: 170px;
+    background: #EF6C2C;
 }
 #Config {
     width: 100vw;

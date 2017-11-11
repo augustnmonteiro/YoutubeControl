@@ -14,7 +14,6 @@ function parseQuery(qstr) {
 function hideAll() {
   var hide = document.querySelectorAll(".hideMe");
   Object.keys(hide).forEach(function(i) {
-    console.log(hide, i);
     hide[i].classList.add("hide");
   });
 }
